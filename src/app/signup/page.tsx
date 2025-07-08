@@ -57,9 +57,14 @@ const handleSignUp = async (e: React.FormEvent) => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-indigo-600 mb-2">
+            THE HAX Platform
+          </h1>
+          <h2 className="text-2xl font-semibold text-gray-900">
             Create your account
           </h2>
+        </div>
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
             <Link 

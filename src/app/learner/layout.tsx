@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const navigation = [
   { name: 'Overview', href: '/learner', icon: Home },
-  { name: 'Training', href: '/learner/training', icon: BookOpen },
+  { name: 'Courses', href: '/learner/courses', icon: BookOpen },
   { name: 'Resources', href: '/learner/resources', icon: BookText },
   { name: 'Profile', href: '/learner/profile', icon: User },
   { name: 'Settings', href: '/learner/settings', icon: Settings },

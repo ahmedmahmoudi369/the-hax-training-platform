@@ -5,17 +5,17 @@ import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Settings, Bell, Lock, Palette, FileText, CreditCard, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { AccountSettings } from './_components/account-settings';
+import { ProfileSettings } from './_components/profile-settings';
 import { NotificationSettings } from './_components/notification-settings';
 import { PrivacySettings } from './_components/privacy-settings';
 import { AppearanceSettings } from './_components/appearance-settings';
 import { BillingSettings } from './_components/billing-settings';
 import { TeamSettings } from './_components/team-settings';
 
-type TabValue = 'account' | 'notifications' | 'billing' | 'team' | 'certification' | 'appearance' | 'privacy';
+type TabValue = 'profile' | 'notifications' | 'billing' | 'team' | 'certification' | 'appearance' | 'privacy';
 
 const tabs: { value: TabValue; icon: React.ReactNode; label: string }[] = [
-  { value: 'account', icon: <Settings className="h-4 w-4 mr-2" />, label: 'Profile' },
+  { value: 'profile', icon: <Settings className="h-4 w-4 mr-2" />, label: 'Profile' },
   { value: 'certification', icon: <FileText className="h-4 w-4 mr-2" />, label: 'Certification' },
   { value: 'billing', icon: <CreditCard className="h-4 w-4 mr-2" />, label: 'Billing' },
   { value: 'team', icon: <Users className="h-4 w-4 mr-2" />, label: 'Team' },
@@ -25,7 +25,7 @@ const tabs: { value: TabValue; icon: React.ReactNode; label: string }[] = [
 ];
 
 export default function SettingsPage() {
-  const [activeTab, setActiveTab] = useState<TabValue>('account');
+  const [activeTab, setActiveTab] = useState<TabValue>('profile');
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -61,7 +61,7 @@ export default function SettingsPage() {
         <div className="flex-1">
           <Card className="overflow-hidden">
             <div className="p-6">
-              {activeTab === 'account' && <AccountSettings />}
+              {activeTab === 'profile' && <ProfileSettings />}
               {activeTab === 'notifications' && <NotificationSettings />}
               {activeTab === 'privacy' && <PrivacySettings />}
               {activeTab === 'appearance' && <AppearanceSettings />}

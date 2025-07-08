@@ -1,3 +1,4 @@
+// src/app/learner/courses/[id]/page.tsx
 'use client';
 
 import { useParams } from 'next/navigation';
@@ -78,7 +79,7 @@ const courseModules = [
   },
 ];
 
-export default function TrainingModulePage() {
+export default function CourseModulePage() {
   const params = useParams();
   const moduleId = params.id as string;
   
@@ -89,8 +90,8 @@ export default function TrainingModulePage() {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold text-gray-900">Module not found</h2>
-        <p className="mt-2 text-gray-600">The requested training module could not be found.</p>
-        <Link href="/dashboard/training" className="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800">
+        <p className="mt-2 text-gray-600">The requested course module could not be found.</p>
+        <Link href="/learner/courses" className="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800">
           ← Back to all modules
         </Link>
       </div>
@@ -115,7 +116,7 @@ export default function TrainingModulePage() {
             </div>
           </div>
           <Link
-            href={`/dashboard/training/${moduleId}/start`}
+            href={`/learner/courses/${moduleId}/start`}
             className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             <PlayCircle className="h-5 w-5 mr-2" />
@@ -154,13 +155,13 @@ export default function TrainingModulePage() {
 
       <div className="flex justify-between mt-6">
         <Link
-          href="/dashboard/training"
+          href="/learner/courses"
           className="inline-flex items-center text-gray-600 hover:text-gray-900"
         >
           ← Back to all modules
         </Link>
         <Link
-          href={`/dashboard/training/${moduleId}/start`}
+          href={`/learner/courses/${moduleId}/start`}
           className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           {moduleData.completed ? 'Review Module' : 'Start Module'}

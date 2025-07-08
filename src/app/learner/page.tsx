@@ -132,7 +132,7 @@ export default function LearnerPage() {
                     </div>
                     <Button 
                       size="sm" 
-                      onClick={() => router.push(`/dashboard/training/${course.id}`)}
+                      onClick={() => router.push(`/learner/courses/${course.id}`)}
                     >
                       <Play className="h-4 w-4 mr-1" />
                       Continue
@@ -225,7 +225,7 @@ export default function LearnerPage() {
             <Button 
               variant="outline" 
               className="flex-col h-auto py-4"
-              onClick={() => router.push('/learner/training')}
+              onClick={() => router.push('/learner/courses')}
             >
               <BookOpen className="h-6 w-6 mb-2 text-indigo-600" />
               Browse Courses
