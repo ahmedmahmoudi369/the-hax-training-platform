@@ -152,3 +152,4 @@ export default function CoursePage({ params }: CoursePageProps) {
     </div>
   );
 }
+export const dynamic = "force-dynamic";
