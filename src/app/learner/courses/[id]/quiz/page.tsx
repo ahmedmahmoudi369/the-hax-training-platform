@@ -116,14 +116,14 @@ export default function QuizPage() {
               )}
             </div>
             <CardTitle className="text-2xl font-bold">
-              {score >= 70 ? 'Quiz Completed!' : 'Quiz Results'}
+              {score >= 80 ? 'Quiz Completed!' : 'Quiz Results'}
             </CardTitle>
             <CardDescription>
               {score >= 80 
                 ? 'Congratulations! You earned a certificate!'
-                : score >= 70 
+                : score >= 80 
                   ? 'You passed! Score 80% or higher to earn a certificate.'
-                  : 'You need to score 70% or higher to pass.'}
+                  : 'You need to score 80% or higher to pass.'}
             </CardDescription>
           </CardHeader>
           <CardContent>

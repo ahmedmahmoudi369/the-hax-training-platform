@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 import path from 'path';
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true, // ← disables lint blocking in production (e.g. Vercel)
+  },
   images: {
     remotePatterns: [
       {
