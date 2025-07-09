@@ -57,7 +57,7 @@ export async function middleware(request: NextRequest) {
 
   // Redirect to login if trying to access protected route while not authenticated
   if (!session && protectedRoutes.some(route => url.pathname.startsWith(route))) {
-    const redirectUrl = new URL('/login', request.url);
+    const redirectUrl = new URL('/signin', request.url);
     redirectUrl.searchParams.set('redirectedFrom', request.nextUrl.pathname);
     return NextResponse.redirect(redirectUrl);
   }
@@ -89,6 +89,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|login|signup|verify-certificate|terms|privacy).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|signin|signup|verify-certificate|terms|privacy).*)',
   ],
 };

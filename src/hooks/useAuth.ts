@@ -61,7 +61,7 @@ export function useAuth(requiredRole?: 'learner' | 'admin') {
         if (requiredRole) {
           if (!session) {
             // Not logged in - redirect to login with return URL
-            router.push(`/login?redirectTo=${encodeURIComponent(pathname)}`);
+            router.push(`/signin?redirectTo=${encodeURIComponent(pathname)}`);
           } else if (profile?.role !== requiredRole) {
             // Logged in but wrong role - redirect to unauthorized
             router.push('/unauthorized');
@@ -98,7 +98,7 @@ export function useAuth(requiredRole?: 'learner' | 'admin') {
           router.push('/unauthorized');
         }
       } else if (event === 'SIGNED_OUT') {
-        router.push('/login');
+        router.push('/signin');
       }
     });
 
@@ -112,7 +112,7 @@ export function useAuth(requiredRole?: 'learner' | 'admin') {
     try {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
-      router.push('/login');
+      router.push('/signin');
     } catch (err) {
       console.error('Error signing out:', err);
       setError('Failed to sign out');

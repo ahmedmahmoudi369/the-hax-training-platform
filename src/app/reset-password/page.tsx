@@ -66,11 +66,11 @@ export default function ResetPasswordPage() {
 
         if (updateError) throw updateError;
 
-        setMessage('Your password has been updated successfully! Redirecting to login...');
+        setMessage('Your password has been updated successfully! Redirecting to sign in...');
         
-        // Redirect to login after a short delay
+        // Redirect to sign in after a short delay
         setTimeout(() => {
-          router.push('/login');
+          router.push('/signin');
         }, 3000);
       } else {
         throw new Error('Invalid password reset link');
@@ -184,10 +184,10 @@ export default function ResetPasswordPage() {
 
         <div className="text-center">
           <Link 
-            href="/login" 
+            href="/signin" 
             className="font-medium text-indigo-600 hover:text-indigo-500 text-sm"
           >
-            Back to login
+            Back to sign in
           </Link>
         </div>
       </div>
